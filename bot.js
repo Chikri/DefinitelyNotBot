@@ -20,13 +20,13 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === '^help') {
-    	message.reply('not set yet');
+    	message.channel.send('not set yet');
   	}
   });
 
 client.on('message', message => {
     if (message.content === '^info') {
-    	message.reply('Bot Creator is Chikri#7857');
+    	message.channel.send('Bot Creator is Chikri#7857');
   	}
 });
 
