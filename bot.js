@@ -2,9 +2,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on('ready', () => {
-    client.user.setGame('https://git.io/d.js-heroku', {type: 'PLAYING'});
-});
 
 client.on('message', msg => {
     if (!msg.content.startsWith(process.env.PREFIX) || !msg.guild) return;
