@@ -30,7 +30,7 @@ client.on('message', msg => {
     .setTimestamp(new Date(msg.createdTimestamp))
 
     msg.guild.channels.find("name", "mod-logs").send({embed});
-  }
+  })
 
 });
 
