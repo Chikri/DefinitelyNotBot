@@ -8,7 +8,7 @@ client.on('message', msg => {
     const command = msg.content.split(' ')[0].substr(process.env.PREFIX.length);
     const args = msg.content.split(' ').slice(1).join(' ');
     if (command === 'guide') return msg.channel.send('pastebin.com');
-    or (command === 'invite') return msg.channel.send(process.env.INVITE);
+    if (command === 'invite') return msg.channel.send(process.env.INVITE);
 });
 
 client.on('message', msg => {
