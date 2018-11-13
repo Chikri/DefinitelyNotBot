@@ -6,16 +6,30 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'ping') {
+    if (message.content === '^ping') {
     	message.channel.send('PONG!');
   	}
 });
 
+
 client.on('message', message => {
-    if (message.content === 'bing') {
+    if (message.content === '^bing') {
     	message.reply('BONG!');
   	}
 });
+
+client.on('message', message => {
+    if (message.content === '^help') {
+    	message.reply('not set yet');
+  	}
+  });
+
+client.on('message', message => {
+    if (message.content === '^info') {
+    	message.reply('Bot Creator is Chikri');
+  	}
+});
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
