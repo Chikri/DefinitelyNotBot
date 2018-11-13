@@ -26,7 +26,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === '^info') {
-    	message.reply('Bot Creator is Chikri');
+    	message.reply('Bot Creator is Chikri#7857');
   	}
 });
 
