@@ -1,33 +1,17 @@
+// Discord.js bot
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    console.log('Booted');
+    client.user.setActivity('https://git.io/d.js-heroku', {type: 'WATCHING'});
 });
 
-client.on('message', message => {
-    if (message.content === '^ping') {
-    	message.channel.send('PONG!');
-  	}
-});
-
-
-client.on('message', message => {
-    if (message.content === '^bing') {
-    	message.reply('BONG!');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === '^help') {
-    	message.channel.send('not set yet');
-  	}
-  });
-
-client.on('message', message => {
-    if (message.content === '^info') {
-    	message.channel.send('Bot Creator is Chikri#7857');
-  	}
+client.on('message', msg => {
+    if (!msg.content.startsWith(process.env.PREFIX) || !msg.guild) return;
+    const command = msg.content.split(' ')[0].substr(process.env.PREFIX.length);
+    const args = msg.content.split(' ').slice(1).join(' ');
+    if (command === 'guide') return msg.channel.send('pastebin.com');
+    else if (command === 'invite') return msg.channel.send(process.env.INVITE);
 });
 
 
