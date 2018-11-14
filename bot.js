@@ -1,8 +1,6 @@
 // Discord.js bot
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const embed = new Discord.RichEmbed()
-
 
 client.on('message', msg => {
     if (!msg.content.startsWith(process.env.PREFIX) || !msg.guild) return;
