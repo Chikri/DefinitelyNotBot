@@ -9,7 +9,6 @@ client.on('message', msg => {
     if (command === 'guide') return msg.channel.send('pastebin.com');
     if (command === 'invite') return msg.channel.send(process.env.INVITE);
     if (command === 'serverinfo')
-
     const embed = new Discord.RichEmbed()
     .setTitle(`${msg.guild.name}`)
     .setColor(0x17bec6)
