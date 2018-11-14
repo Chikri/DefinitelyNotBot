@@ -12,6 +12,7 @@ client.on('message', msg => {
     if (command === 'invite') return msg.channel.send(process.env.INVITE);
     if (command === 'serverinfo')
 
+    const embed = new Discord.RichEmbed()
     .setTitle(`${msg.guild.name}`)
     .setColor(0x17bec6)
     .addField(`Owner`, `${msg.guild.owner.user.tag} (${msg.guild.owner.id})`)
@@ -53,12 +54,13 @@ client.on('message', msg => {
 
   userToBan.ban()
     var user = msg.mentions.users.first()
+    const embeed = new Discord.RichEmbed()
     .setTitle(`:hammer: User Banned: ${user.tag} (${user.id})`)
     .setColor(0xd11212)
     .addField("Responsible Moderator:", `${msg.author.tag} (${msg.author.id})\n\nReason: ${reason}`)
     .setTimestamp(new Date(msg.createdTimestamp))
 
-    msg.guild.channels.find("name", "mod-logs").send({embed});
+    msg.guild.channels.find("name", "mod-logs").send({embeed});
   });
 
 
