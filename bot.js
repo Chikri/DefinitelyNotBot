@@ -22,9 +22,9 @@ client.on('message', msg => {
       if (typeof evaled !== 'string')
         evaled = require('util').inspect(evaled);
 
-        msg.channel.send(`:inbox_tray: Input: \n \`\`\`${evalstuff}\`\`\` \n :outbox_tray: Output: \n  \`\`\`${clean(evaled)}\`\`\``)
+        msg.channel.send(`:inbox_tray: Input: \n \`\`\`${evalstuff}\`\`\` \n :outbox_tray: Output: \n  \`\`\`${(evaled)}\`\`\``)
     } catch (err) {
-        msg.channel.send(`:inbox_tray: Input: \n \`\`\`${evalstuff}\`\`\` \n :outbox_tray: Output: \n  \`\`\`${clean(err)}\`\`\``)
+        msg.channel.send(`:inbox_tray: Input: \n \`\`\`${evalstuff}\`\`\` \n :outbox_tray: Output: \n  \`\`\`${(err)}\`\`\``)
     };
 
     if (command === 'ban') 
