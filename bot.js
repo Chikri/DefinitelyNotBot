@@ -32,7 +32,7 @@ client.on('message', msg => {
     msg.guild.channels.find("name", "mod-logs").send({embed});
   })
 
-});
+);
 
 
 
