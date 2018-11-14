@@ -35,21 +35,21 @@ if (msg.content.startsWith(prefix + 'help')) {
   msg.channel.send(":inbox_tray: | My commands have been sent to you via DM.")
   msg.author.send(`\`\`\`asciidoc
 = General =
-^.ping :: Hm. I wonder what this does? /sarcasm
-^.8ball :: Ask the magic 8ball a question. Pretty self explanatory
-^.help :: Brings up this menu
-^.invite :: Shows the bot's invite URL\`\`\``)
+^ping :: Hm. I wonder what this does? /sarcasm
+^8ball :: Ask the magic 8ball a question. Pretty self explanatory
+^help :: Brings up this menu
+^invite :: Shows the bot's invite URL\`\`\``)
   msg.author.send(`\`\`\`asciidoc
 = Moderation =
-^.ban :: Bans the user specified
-^.kick :: Kicks the user specified
-^.softban :: Softbans the specified user\`\`\``)
+^ban :: Bans the user specified
+^kick :: Kicks the user specified
+^softban :: Softbans the specified user\`\`\``)
   msg.author.send(`\`\`\`asciidoc
 = Keywords =
-= Bot Owner Commands =
-^.restart :: Restarts Catbot
-^.eval :: Evaluates arbitrary JavaScript code
-^.say :: Outputs the inputted arguments (anything after c.say), else, if there's no args, return\`\`\``)
+= Bot Owner Commands (Only Chikri Can Use) =
+^restart :: Restarts Catbot
+^eval :: Evaluates arbitrary JavaScript code
+^say :: Outputs the inputted arguments (anything after c.say), else, if there's no args, return\`\`\``)
   msg.author.send("For the moderation commands to log properly, a channel named `mod-logs` must be provided.")
 }
 
