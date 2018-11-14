@@ -11,6 +11,23 @@ client.on('message', msg => {
     if (command === 'invite') return msg.channel.send(process.env.INVITE);
     if (command === 'help') return msg.author.send('Note: All commands need to have prefix | guide = shows a guide on how to use the bot | invite = shows invite for the bot | info = shows info about the bot');
     if (command === 'info') return msg.channel.send(process.env.INFO);
+    if (command === 'eval')
+        if(msg.author.id !== "480791584829341700") return;
+  let evall = msg.content.split(' ')[0];
+  let evalstuff = msg.content.split(" ").slice(1).join(" ")
+  try {
+      const code = msg.content.split(" ").slice(1).join(" ")
+      let evaled = eval(code);
+
+      if (typeof evaled !== 'string')
+        evaled = require('util').inspect(evaled);
+
+        msg.channel.send(`:inbox_tray: Input: \n \`\`\`${evalstuff}\`\`\` \n :outbox_tray: Output: \n  \`\`\`${clean(evaled)}\`\`\``)
+    } catch (err) {
+        msg.channel.send(`:inbox_tray: Input: \n \`\`\`${evalstuff}\`\`\` \n :outbox_tray: Output: \n  \`\`\`${clean(err)}\`\`\``)
+    }
+  }
+;
     if (command === 'ban') 
     if (!msg.member.permissions.has("BAN_MEMBERS")) return msg.channel.send(":warning: Insufficient Permissions").catch(console.error);
     if (!msg.guild.member(client.user).permissions.has("BAN_MEMBERS")) return msg.channel.send(":warning: Bot has insufficient permissions").catch(console.error);
@@ -31,6 +48,8 @@ client.on('message', msg => {
 
     msg.guild.channels.find("name", "mod-logs").send({embed});
   });
+
+
 
 
 
