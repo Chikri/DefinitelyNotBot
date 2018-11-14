@@ -40,28 +40,6 @@ client.on('message', msg => {
         msg.channel.send(`:inbox_tray: Input: \n \`\`\`${evalstuff}\`\`\` \n :outbox_tray: Output: \n  \`\`\`${(err)}\`\`\``)
     };
 
-    if (command === 'ban') 
-    if (!msg.member.permissions.has("BAN_MEMBERS")) return msg.channel.send(":warning: Insufficient Permissions").catch(console.error);
-    if (!msg.guild.member(client.user).permissions.has("BAN_MEMBERS")) return msg.channel.send(":warning: Bot has insufficient permissions").catch(console.error);
-
-  if (msg.mentions.users.size === 0) return msg.channel.send("No user provided")
-
-  if (msg.author.id === msg.mentions.members.first().user.id) return msg.channel.send("You can't ban yourself").catch(console.error);
-
-  if (client.user.id === msg.mentions.users.first().id) return msg.channel.send(`Don't try to ban me, ${msg.author.username}`).catch(console.error);
-
-  userToBan.ban()
-    var user = msg.mentions.users.first()
-    const embeed = new Discord.RichEmbed()
-    .setTitle(`:hammer: User Banned: ${user.tag} (${user.id})`)
-    .setColor(0xd11212)
-    .addField("Responsible Moderator:", `${msg.author.tag} (${msg.author.id})\n\nReason: ${reason}`)
-    .setTimestamp(new Date(msg.createdTimestamp))
-
-    msg.guild.channels.find("name", "mod-logs").send({embeed});
-  });
-
-
 
 
 
