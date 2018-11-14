@@ -1,6 +1,7 @@
 // Discord.js bot
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const embed = new Discord.RichEmbed()
 
 
 client.on('message', msg => {
@@ -10,7 +11,6 @@ client.on('message', msg => {
     if (command === 'guide') return msg.channel.send('pastebin.com');
     if (command === 'invite') return msg.channel.send(process.env.INVITE);
     if (command === 'serverinfo')
-      const embed = new Discord.RichEmbed()
 
     .setTitle(`${msg.guild.name}`)
     .setColor(0x17bec6)
@@ -53,7 +53,6 @@ client.on('message', msg => {
 
   userToBan.ban()
     var user = msg.mentions.users.first()
-    const embed = new Discord.RichEmbed()
     .setTitle(`:hammer: User Banned: ${user.tag} (${user.id})`)
     .setColor(0xd11212)
     .addField("Responsible Moderator:", `${msg.author.tag} (${msg.author.id})\n\nReason: ${reason}`)
