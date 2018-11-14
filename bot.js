@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  console.log(`Logged in ass ${client.user.tag}!`);
+  console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: `on ${client.guilds.size} servers | ^help`, type: 0 }});
 });
 
